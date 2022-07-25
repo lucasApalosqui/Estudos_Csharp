@@ -44,7 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aluno.cs" />
-    <Compile Include="Banco.cs" />
+    <Compile Include="AluguelQuartos.cs" />
+    <Compile Include="AumentoFuncionarios.cs" />
     <Compile Include="ConversorDeMoeda.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="retangulo.cs" />

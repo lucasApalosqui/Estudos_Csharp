@@ -8,54 +8,45 @@ namespace Primeiro
     {
         static void Main(string[] args)
         {
-            int numeroFunc, codigoFunc;
-            string nomeFunc;
-            double porcentagemAumento, salario;
+            int numNegativo = 0;
 
-            List<AumentoFuncionarios> listFun = new List<AumentoFuncionarios>();
+            int num = int.Parse(Console.ReadLine());
+            int[,] matriz = new int[num, num];
 
-            Console.WriteLine("Informe o numero de funcionarios: ");
-            numeroFunc = int.Parse(Console.ReadLine());
-
-            for(int i = 0; i < numeroFunc; i++)
+            for (int l = 0; l < matriz.GetLength(0); l++)
             {
-                Console.WriteLine("Informe o codigo do funcionario: ");
-                codigoFunc = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Informe o nome do funcionario: ");
-                nomeFunc = Console.ReadLine();
-
-                Console.WriteLine("Informe o salario do funcionario: ");
-                salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-
-                listFun.Add(new AumentoFuncionarios(codigoFunc, nomeFunc, salario));
-                Console.WriteLine();
+                for(int c = 0; c < matriz.GetLength(1); c++)
+                {
+                    Console.WriteLine("Escreva o numero inteiro que ficará no local: [" + l + "] [" + c + "]\n" );
+                    int inteiro = 
+                    matriz[l,c] = int.Parse(Console.ReadLine());
+                }
             }
 
-            Console.WriteLine("Informe o codigo do funcionario que deseja aumentar o salario: ");
-            int codFunAu = int.Parse(Console.ReadLine());
-            AumentoFuncionarios codAumento = listFun.Find(x => x.CodigoFun == codFunAu);
-            if(codAumento != null)
+            for (int l = 0; l < matriz.GetLength(0); l++)
             {
-                Console.Write("Entre com a porcentagem: ");
-                porcentagemAumento = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                codAumento.aumentaSalario(porcentagemAumento);
-                Console.WriteLine();
-            }
-            else
-            {
-                Console.Write("Esse ID não existe");
-                Console.WriteLine();
+
+                Console.WriteLine("[" + matriz[l,0] + "]" + "[" + matriz[l, 1] + "]" + "[" + matriz[l, 2] + "]");
             }
 
-            Console.WriteLine("Lista atualizada dos funcionarios:");
-            foreach (AumentoFuncionarios obj in listFun)
+            Console.WriteLine();
+            for (int l = 0; l < matriz.GetLength(0); l++)
             {
-                Console.WriteLine(obj);
+                for (int c = 0; c < matriz.GetLength(1); c++) 
+                {
+                    if (l == c)
+                    {
+                        Console.WriteLine("[" + matriz[l, c] + "]");
+                    }
+
+                    if (matriz[l,c] < 0)
+                    {
+                        numNegativo += 1;
+                    }
+                }
             }
-
-
-
+            Console.WriteLine("Numero de negativos: " + numNegativo
+                );
         }
 
         }
