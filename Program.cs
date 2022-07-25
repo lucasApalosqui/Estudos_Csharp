@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace Primeiro
@@ -7,42 +8,56 @@ namespace Primeiro
     {
         static void Main(string[] args)
         {
-            string nome, email;
-            int numAluguel, sala;
+            int numeroFunc, codigoFunc;
+            string nomeFunc;
+            double porcentagemAumento, salario;
 
-            AluguelQuartos[] aluguel = new AluguelQuartos[10];
+            List<AumentoFuncionarios> listFun = new List<AumentoFuncionarios>();
 
-            Console.WriteLine("Informe o numero de alugueis que deseja realizar: ");
-            numAluguel = int.Parse(Console.ReadLine());
+            Console.WriteLine("Informe o numero de funcionarios: ");
+            numeroFunc = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < numAluguel; i++)
+            for(int i = 0; i < numeroFunc; i++)
             {
-                Console.WriteLine("Informe os dados da " + (i + 1) + "° reserva\nInforme o seu nome: ");
-                nome = Console.ReadLine();
+                Console.WriteLine("Informe o codigo do funcionario: ");
+                codigoFunc = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Informe o seu email: ");
-                email = Console.ReadLine();
+                Console.WriteLine("Informe o nome do funcionario: ");
+                nomeFunc = Console.ReadLine();
 
-                Console.WriteLine("Informe o numero da sala que deseja alugar: ");
-                sala = int.Parse(Console.ReadLine());
+                Console.WriteLine("Informe o salario do funcionario: ");
+                salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-                aluguel[sala] = new AluguelQuartos { nome = nome, email = email };
-
+                listFun.Add(new AumentoFuncionarios(codigoFunc, nomeFunc, salario));
+                Console.WriteLine();
             }
 
-            Console.WriteLine("Salas alugadas:");
-            for (int i = 0; i < aluguel.Length; i++)
+            Console.WriteLine("Informe o codigo do funcionario que deseja aumentar o salario: ");
+            int codFunAu = int.Parse(Console.ReadLine());
+            AumentoFuncionarios codAumento = listFun.Find(x => x.CodigoFun == codFunAu);
+            if(codAumento != null)
             {
-                if (aluguel[i] != null )
-                {
-                    Console.WriteLine(i + " sala: " + aluguel[i].nome + ", " + aluguel[i].email);
-                }
+                Console.Write("Entre com a porcentagem: ");
+                porcentagemAumento = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                codAumento.aumentaSalario(porcentagemAumento);
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.Write("Esse ID não existe");
+                Console.WriteLine();
             }
 
-       
+            Console.WriteLine("Lista atualizada dos funcionarios:");
+            foreach (AumentoFuncionarios obj in listFun)
+            {
+                Console.WriteLine(obj);
+            }
 
 
 
         }
+
+        }
     }
-}
+
