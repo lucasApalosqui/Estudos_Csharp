@@ -8,45 +8,54 @@ namespace Primeiro
     {
         static void Main(string[] args)
         {
-            int numNegativo = 0;
+            int m, n,x, num;
 
-            int num = int.Parse(Console.ReadLine());
-            int[,] matriz = new int[num, num];
+            Console.WriteLine("Informe o numero de linhas da matriz: ");
+            m = int.Parse(Console.ReadLine());
 
-            for (int l = 0; l < matriz.GetLength(0); l++)
+            Console.WriteLine("Informe o numero de colunas da matriz: ");
+            n = int.Parse(Console.ReadLine());
+
+            int[,] matriz = new int[m, n];
+
+            for(int l = 0; l < matriz.GetLength(0); l++)
             {
                 for(int c = 0; c < matriz.GetLength(1); c++)
                 {
-                    Console.WriteLine("Escreva o numero inteiro que ficará no local: [" + l + "] [" + c + "]\n" );
-                    int inteiro = 
+                    Console.WriteLine("Escreva o numero inteiro que ficará no local: [" + l + "] [" + c + "]\n");
                     matriz[l,c] = int.Parse(Console.ReadLine());
                 }
             }
+            Console.WriteLine("Informe o numero que quer pesquisar na tabela: ");
+            x = int.Parse(Console.ReadLine());
 
             for (int l = 0; l < matriz.GetLength(0); l++)
             {
-
-                Console.WriteLine("[" + matriz[l,0] + "]" + "[" + matriz[l, 1] + "]" + "[" + matriz[l, 2] + "]");
-            }
-
-            Console.WriteLine();
-            for (int l = 0; l < matriz.GetLength(0); l++)
-            {
-                for (int c = 0; c < matriz.GetLength(1); c++) 
+                for (int c = 0; c < matriz.GetLength(1); c++)
                 {
-                    if (l == c)
+                    if (matriz[l,c] == x)
                     {
-                        Console.WriteLine("[" + matriz[l, c] + "]");
-                    }
-
-                    if (matriz[l,c] < 0)
-                    {
-                        numNegativo += 1;
+                        Console.WriteLine("Dados:");
+                        if (l > 0)
+                        {
+                            Console.WriteLine("Cima: " + matriz[l - 1,c]);
+                        }
+                        if(c > 0)
+                        {
+                            Console.WriteLine("Esquerda: " + matriz[l , c - 1]);
+                        }
+                        if(c + 1 < matriz.GetLength(1))
+                        {
+                            Console.WriteLine("Direita: " + matriz[l, c + 1]);
+                        }
+                        if(l + 1 < matriz.GetLength(0))
+                        {
+                            Console.WriteLine("Baixo: " + matriz[l + 1, c]);
+                        }
+                        Console.WriteLine();
                     }
                 }
             }
-            Console.WriteLine("Numero de negativos: " + numNegativo
-                );
         }
 
         }
