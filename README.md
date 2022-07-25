@@ -17,30 +17,30 @@ mostrando os dados da conta após cada operação.
 
 EXEMPLO 1 - 
 
-Entre o número da conta: 8532
-Entre o titular da conta: Alex Green
-Haverá depósito inicial (s/n)? s
-Entre o valor de depósito inicial: 500.00
-Dados da conta:
-Conta 8532, Titular: Alex Green, Saldo: $ 500.00
-Entre um valor para depósito: 200.00
-Dados da conta atualizados:
-Conta 8532, Titular: Alex Green, Saldo: $ 700.00
-Entre um valor para saque: 300.00
-Dados da conta atualizados:
-Conta 8532, Titular: Alex Green, Saldo: $ 395.00
+Entre o número da conta: 8532 </br>
+Entre o titular da conta: Alex Green </br>
+Haverá depósito inicial (s/n)? s </br>
+Entre o valor de depósito inicial: 500.00 </br>
+Dados da conta: </br>
+Conta 8532, Titular: Alex Green, Saldo: $ 500.00 </br>
+Entre um valor para depósito: 200.00 </br>
+Dados da conta atualizados: </br>
+Conta 8532, Titular: Alex Green, Saldo: $ 700.00 </br>
+Entre um valor para saque: 300.00 </br>
+Dados da conta atualizados: </br>
+Conta 8532, Titular: Alex Green, Saldo: $ 395.00 </br>
 
 
 EXEMPLO 2 -
 
-Entre o número da conta: 7801
-Entre o titular da conta: Maria Brown
-Haverá depósito inicial (s/n)? n
-Dados da conta:
-Conta 7801, Titular: Maria Brown, Saldo: $ 0.00
-Entre um valor para depósito: 200.00
-Dados da conta atualizados:
-Conta 7801, Titular: Maria Brown, Saldo: $ 200.00
-Entre um valor para saque: 198.00
-Dados da conta atualizados:
-Conta 7801, Titular: Maria Brown, Saldo: $ -3.00
+Entre o número da conta: 7801 </br>
+Entre o titular da conta: Maria Brown </br>
+Haverá depósito inicial (s/n)? n </br>
+Dados da conta </br>
+Conta 7801, Titular: Maria Brown, Saldo: $ 0.00 </br>
+Entre um valor para depósito: 200.00 </br>
+Dados da conta atualizados: </br>
+Conta 7801, Titular: Maria Brown, Saldo: $ 200.00 </br>
+Entre um valor para saque: 198.00 </br>
+Dados da conta atualizados: </br>
+Conta 7801, Titular: Maria Brown, Saldo: $ -3.00 </br>
